@@ -1,5 +1,10 @@
 Revision history for Perl extension Language::Prolog::Types.
 
+0.09  Feb 15 2005
+	- added prolog_variables() factory (aka Vs()).
+	- resolved bug in prolog_is_functor()
+	- added rename method to variable objects. Use with care!.
+
 0.08  Wed Jan 22 2003
 	- Language::Prolog::Types::Internal::opaque opaque_class
 	  method now returns the correct class

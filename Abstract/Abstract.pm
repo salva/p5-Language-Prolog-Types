@@ -1,6 +1,6 @@
 package Language::Prolog::Types::Abstract;
 
-our $VERSION = '0.02';
+our $VERSION = '0.09';
 
 =head1 NAME
 
@@ -116,7 +116,7 @@ list.
 
 sub prolog_is_functor ($ ) {
     my $self=shift;
-    UNIVERSAL::isa(shift, 'Language::Prolog::Types::Functor')
+    UNIVERSAL::isa($self, 'Language::Prolog::Types::Functor')
 	or (ref($self) eq 'ARRAY' and @{$self}>0)
 }
 
@@ -339,7 +339,7 @@ our @ISA=qw(Language::Prolog::Types::Term);
 
 use Carp;
 sub name { croak "unimplemented virtual method" }
-
+sub rename { croak "unimplemented virtual method" }
 
 =item Language::Prolog::Types::Functor
 
@@ -371,8 +371,10 @@ returns the arguments of the functor.
 
 =item C<$f-E<gt>farg($index)>
 
-return the argument of the functor in the position C<$index>, if
+returns the argument of the functor in the position C<$index>, if
 C<$index> is negative the arguments are indexed begining from the end.
+
+Be aware that arguments are indexed from 0, not from 1 as in prolog.
 
 =back
 
@@ -528,6 +530,8 @@ this type.
 
 =head3 Methods:
 
+=over 4
+
 =item C<$this-E<gt>opaque_reference>
 
 returns the object that it shields from prolog
@@ -596,7 +600,7 @@ Salvador Fandiño, E<lt>sfandino@yahoo.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002 by Salvador Fandiño
+Copyright 2002-2005 by Salvador Fandiño
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

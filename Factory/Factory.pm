@@ -1,6 +1,6 @@
 package Language::Prolog::Types::Factory;
 
-our $VERSION = '0.02';
+our $VERSION = '0.09';
 
 use strict;
 use warnings;
@@ -13,6 +13,7 @@ our @EXPORT = qw( prolog_list
 		  prolog_ulist
 		  prolog_functor
 		  prolog_variable
+		  prolog_variables
 		  prolog_var
 		  prolog_nil
 		  prolog_atom
@@ -62,6 +63,8 @@ sub prolog_functor ($@ ) {
 }
 
 sub prolog_variable ($ ) { $factory->new_variable(@_) }
+
+sub prolog_variables { map { prolog_variable $_ } @_ }
 
 sub prolog_nil () { $factory->new_nil }
 

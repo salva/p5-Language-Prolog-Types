@@ -1,6 +1,6 @@
 package Language::Prolog::Types::Internal;
 
-our $VERSION=0.03;
+our $VERSION=0.09;
 
 use strict;
 use warnings;
@@ -204,6 +204,8 @@ sub new {
 
 sub name { $ {$_[0]} }
 
+sub rename { ${$_[0]}=$_[1] }
+
 
 package Language::Prolog::Types::Internal::opaque;
 our @ISA=qw(Language::Prolog::Types::Opaque);
@@ -270,7 +272,7 @@ Salvador Fandiño, E<lt>sfandino@yahoo.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002 by Salvador Fandiño.
+Copyright 2005 by Salvador Fandiño.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

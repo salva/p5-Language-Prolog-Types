@@ -1,6 +1,6 @@
 package Language::Prolog::Types;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 use strict;
 use warnings;
@@ -23,7 +23,9 @@ our %EXPORT_TAGS = ( is => [qw( prolog_is_term
 				   prolog_ulist
 				   prolog_functor
 				   prolog_variable
+				   prolog_variables
 				   prolog_var
+				   prolog_vars
 				   prolog_atom
 				   prolog_nil
 				   prolog_string
@@ -42,6 +44,7 @@ our %EXPORT_TAGS = ( is => [qw( prolog_is_term
 				   UL
 				   F
 				   V
+				   Vs
 				   A
 				   N
 				   S
@@ -69,6 +72,7 @@ use Language::Prolog::Types::Abstract;
 *UL=\&prolog_ulist;
 *F=\&prolog_functor;
 *V=\&prolog_variable;
+*Vs=\&prolog_variables;
 *A=\&prolog_atom;
 *N=\&prolog_nil;
 *S=\&prolog_string;
@@ -339,7 +343,7 @@ Salvador Fandiño, E<lt>sfandino@yahoo.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002 by Salvador Fandiño
+Copyright 2002-2005 by Salvador Fandiño
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
