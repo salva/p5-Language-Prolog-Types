@@ -1,11 +1,8 @@
 use 5.006;
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-WriteMakefile(
-    'NAME'		=> 'Language::Prolog::Types',
-    'VERSION_FROM'	=> 'Types.pm', # finds $VERSION
-    'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
-    'ABSTRACT_FROM' => 'Types.pm', # retrieve abstract from module
-    'AUTHOR'     => 'Salvador Fandiño <sfandino@yahoo.com>',
-);
+
+WriteMakefile( 'NAME' => 'Language::Prolog::Types',
+	       'VERSION_FROM' => 'lib/Language/Prolog/Types.pm',
+	       'PREREQ_PM' => {},
+	       'ABSTRACT_FROM' => 'lib/Language/Prolog/Types.pm',
+	       'AUTHOR' => 'Salvador Fandiño <sfandino@yahoo.com>' );

@@ -1,16 +1,12 @@
-Abstract/Abstract.pm
-Abstract/Makefile.PL
 Changes
-Converter/Converter.pm
-Converter/Makefile.PL
-Factory/Factory.pm
-Factory/Makefile.PL
-Internal/Internal.pm
-Internal/Makefile.PL
+lib/Language/Prolog/Types/Abstract.pm
+lib/Language/Prolog/Types/Converter.pm
+lib/Language/Prolog/Types/Factory.pm
+lib/Language/Prolog/Types/Internal.pm
+lib/Language/Prolog/Types/overload.pm
+lib/Language/Prolog/Types.pm
 Makefile.PL
 MANIFEST
-overload/overload.pm
-overload/Makefile.PL
 README
 t/1.t
-Types.pm
+META.yml                                 Module meta-data (added by MakeMaker)
