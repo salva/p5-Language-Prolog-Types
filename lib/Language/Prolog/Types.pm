@@ -1,6 +1,6 @@
 package Language::Prolog::Types;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 use strict;
 use warnings;
@@ -337,15 +337,11 @@ L<Language::Prolog::Sugar>
 
 L<Language::XSB>
 
-=head1 AUTHOR
-
-Salvador Fandiño, E<lt>sfandino@yahoo.comE<gt>
-
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2005 by Salvador Fandiño
+Copyright 2002-2005, 2007 by Salvador FandiE<ntilde>o
+E<lt>sfandino@yahoo.comE<gt>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
-=cut

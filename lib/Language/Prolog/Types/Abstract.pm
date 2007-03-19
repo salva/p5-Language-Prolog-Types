@@ -1,6 +1,6 @@
 package Language::Prolog::Types::Abstract;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 =head1 NAME
 
@@ -217,9 +217,7 @@ sub prolog_list2perl_string {
 
 =head2 ABSTRACT CLASSES
 
-=over 4
-
-=item Language::Prolog::Types::Term
+=head3 Language::Prolog::Types::Term
 
 common abstract class for every Prolog term.
 
@@ -229,7 +227,7 @@ package Language::Prolog::Types::Term;
 
 
 
-=item Language::Prolog::Types::ListOrNil
+=head3 Language::Prolog::Types::ListOrNil
 
 This class is used to account for the intrinsec differences between
 empty lists in Perl and Prolog.
@@ -244,7 +242,8 @@ BTW, you should mostly ignore this class and use
 L<Prolog::Language::Types::Nil> or L<Prolog::Language::Types::List>
 instead.
 
-=head3 Inherits:
+
+=head4 Inherits:
 
 =over 4
 
@@ -252,7 +251,7 @@ instead.
 
 =back
 
-=head3 Methods:
+=head4 Methods:
 
 =over 4
 
@@ -289,11 +288,11 @@ sub length    { croak "unimplemented virtual method" }
 sub tail      { croak "unimplemented virtual method" }
 
 
-=item Language::Prolog::Types::Nil
+=head3 Language::Prolog::Types::Nil
 
 Common abstract class for Prolog nil term representation.
 
-=head3 Inherits
+=head4 Inherits
 
 =over 4
 
@@ -301,7 +300,7 @@ Common abstract class for Prolog nil term representation.
 
 =back
 
-=head3 Methods
+=head4 Methods
 
 This class doesn't define any method on its own.
 
@@ -310,11 +309,11 @@ This class doesn't define any method on its own.
 package Language::Prolog::Types::Nil;
 our @ISA=qw(Language::Prolog::Types::ListOrNil);
 
-=item Language::Prolog::Types::Variable
+=head3 Language::Prolog::Types::Variable
 
 Common abstract class for Prolog variable representation.
 
-=head3 Inherits:
+=head4 Inherits:
 
 =over 4
 
@@ -322,7 +321,7 @@ Common abstract class for Prolog variable representation.
 
 =back
 
-=head3 Methods:
+=head4 Methods:
 
 =over 4
 
@@ -341,11 +340,11 @@ use Carp;
 sub name { croak "unimplemented virtual method" }
 sub rename { croak "unimplemented virtual method" }
 
-=item Language::Prolog::Types::Functor
+=head3 Language::Prolog::Types::Functor
 
 Common abstract class for Prolog functor representations.
 
-=head3 Inherits:
+=head4 Inherits:
 
 =over 4
 
@@ -353,7 +352,7 @@ Common abstract class for Prolog functor representations.
 
 =back
 
-=head3 Methods:
+=head4 Methods:
 
 =over 4
 
@@ -390,11 +389,11 @@ sub farg    { croak "unimplemented virtual method" }
 sub fargs   { croak "unimplemented virtual method" }
 
 
-=item Language::Prolog::Types::List
+=head3 Language::Prolog::Types::List
 
 Common abstract class for Prolog list representations.
 
-=head3 Inherits:
+=head4 Inherits:
 
 =over 4
 
@@ -416,7 +415,7 @@ is the reasong, to descent also from this class.
 
 =back
 
-=head3 Methods:
+=head4 Methods:
 
 =over 4
 
@@ -455,12 +454,12 @@ sub farg {
 }
 
 
-=item Language::Prolog::Types::UList
+=head3 Language::Prolog::Types::UList
 
 Common abstract class to represent unfinished lists (those whose tail
 is not nil).
 
-=head3 Inherits:
+=head4 Inherits:
 
 =over 4
 
@@ -468,7 +467,7 @@ is not nil).
 
 =back
 
-=head3 Methods:
+=head4 Methods:
 
 None of its own.
 
@@ -479,11 +478,11 @@ our @ISA=qw(Language::Prolog::Types::List);
 use Carp;
 
 
-=item Language::Prolog::Types::Unknow
+=head3 Language::Prolog::Types::Unknow
 
 just in case...
 
-=head3 Inherits:
+=head4 Inherits:
 
 =over 4
 
@@ -491,7 +490,7 @@ just in case...
 
 =back
 
-=head3 Methods:
+=head4 Methods:
 
 None.
 
@@ -503,7 +502,7 @@ our @ISA=qw(Language::Prolog::Types::Term);
 
 sub id { '*unknow*' }
 
-=item Language::Prolog::Types::Opaque
+=head3 Language::Prolog::Types::Opaque
 
 This class should be only used by Prolog <-> Perl interface authors.
 
@@ -520,7 +519,7 @@ It should be noted that not all prolog implementations would support
 this type.
 
 
-=head3 Inherits:
+=head4 Inherits:
 
 =over 4
 
@@ -528,7 +527,7 @@ this type.
 
 =back
 
-=head3 Methods:
+=head4 Methods:
 
 =over 4
 
@@ -559,7 +558,7 @@ sub opaque_comment { return '-' }
 sub opaque_class { return ref shift }
 
 
-=item Language::Prolog::Types::Opaque::Auto
+=head3 Language::Prolog::Types::Opaque::Auto
 
 Not really an abstract class but a simple implementation to be used as
 a base class to provide automatic opacity to objects.
@@ -575,12 +574,6 @@ our @ISA=qw(Language::Prolog::Types::Opaque);
 
 sub opaque_reference { return shift }
 
-
-
-
-=back
-
-=cut
 
 1; # module ok
 
@@ -600,7 +593,7 @@ Salvador Fandiño, E<lt>sfandino@yahoo.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2005 by Salvador Fandiño
+Copyright 2002-2007 by Salvador Fandiño
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
